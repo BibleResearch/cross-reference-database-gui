@@ -1,0 +1,12 @@
+{% extends 'bible_cross_reference_database/base.html' %}
+
+{% block content %}
+    <h1>Cross References</h1>
+    <ul>
+    {% for cross_ref in object_list %}
+        <li><a href="{% url 'cross_referencer:details' cross_ref.id %}">{{ cross_ref }}</a></li>
+    {% empty %}
+        <li>No cross references yet, but you can <a href="{% url 'cross_referencer:new' %}">add one</a>.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'bible_cross_reference_database/base.html' %}
+
+{% block content %}
+    <h1>Welcome to the Bible Cross Reference Database!</h1>
+
+    Project to capture, manage, and make accessible cross references within the Bible.
+
+    <br><br>
+
+    <a href="{% url 'cross_referencer:list' %}">View cross references</a>
+{% endblock %}

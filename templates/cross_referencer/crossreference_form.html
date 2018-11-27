@@ -1,0 +1,12 @@
+{% extends 'bible_cross_reference_database/base.html' %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <label>Starting Passage:</label>
+        <input type="text" name="startingPassage" maxlength="30">
+        <label>Destination Passage:</label>
+        <input type="text" name="destinationPassage" maxlength="30">
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}

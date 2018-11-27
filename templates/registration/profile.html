@@ -1,0 +1,23 @@
+{% extends 'bible_cross_reference_database/base.html' %}
+
+
+{% block content %}
+    <h2>Hi {{ user.username }}!</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% autoescape off %}
+                <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+            {% endautoescape %}
+        {% endfor %}
+        <br><br>
+    {% endif %}
+
+    <b>API Token:</b> {{ token.key }} - <i>created {{ token.created }}</i>
+
+    <br><br>
+
+    <a href="{% url 'accounts:new_token' %}" class="button secondary">Recreate token</a>
+    <a href="{% url 'accounts:password_change' %}" class="button secondary">Change password</a>
+{% endblock %}
+

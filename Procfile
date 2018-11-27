@@ -1,0 +1,1 @@
+web: gunicorn bible_cross_reference_database.wsgi

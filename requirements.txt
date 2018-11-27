@@ -1,0 +1,8 @@
+dj-database-url==0.4.1
+Django==1.11.1
+djangorestframework
+gunicorn==19.6.0
+ioc-finder==0.1.5
+psycopg2==2.7.1
+pytest-django
+whitenoise==3.2
