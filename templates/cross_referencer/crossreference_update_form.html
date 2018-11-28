@@ -1,0 +1,13 @@
+{% extends 'bible_cross_reference_database/base.html' %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <label>Starting Passage:</label>
+        <input type="text" name="startingPassage" maxlength="30" value="{{ object.start }}">
+        <label>Destination Passage:</label>
+        <input type="text" name="destinationPassage" maxlength="30" value="{{ object.destination }}">
+        <input class="button" type="submit" value="Update">
+        <a class="button secondary" href="{% url 'cross_referencer:details' object.id %}">Cancel</a>
+    </form>
+{% endblock %}

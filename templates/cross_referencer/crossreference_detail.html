@@ -18,6 +18,9 @@
 
     <p>
         <a class="button" href="{% url 'cross_referencer:edit' object.id %}">Edit</a>
-        <a class="button secondary" href="{% url 'cross_referencer:delete' object.id %}">Delete</a>
+        <a class="button" href="{% url 'cross_referencer:delete' object.id %}">Delete</a>
+    </p>
+    <p>
+        <a href="{% url 'cross_referencer:list' %}">< View other cross references</a>
     </p>
 {% endblock %}
