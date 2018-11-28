@@ -41,7 +41,7 @@ down: ## shutdown any running docker instances
 static: ## run the "collectstatic" command
 	docker-compose run web python manage.py collectstatic
 
-clean: clean-build clean-pyc ## remove all build, test, coverage and Python artifacts
+clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
 clean-build:
 	rm -fr build/
@@ -56,3 +56,7 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
+
+clean-test:
+	find . -name '.pytest_cache' -exec rm -rf {} +
+	find . -name '.cache' -exec rm -rf {} +
