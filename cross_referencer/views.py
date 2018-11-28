@@ -10,13 +10,6 @@ from .utility import create_bible_reference
 
 class CrossReferenceListView(ListView):
     model = CrossReference
-    # TODO: do I need pagination?
-    paginate_by = 100  # if pagination is desired
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['now'] = timezone.now()
-    #     return context
 
 
 class CrossReferenceCreateView(CreateView):
@@ -54,11 +47,10 @@ class CrossReferenceDetailView(DetailView):
 
 class CrossReferenceEditView(UpdateView):
     model = CrossReference
-    fields = ['name']
-    # TODO: not sure if I need this
-    # template_name_suffix = '_update_form'
+    fields = ['classification', 'explanation', 'sources']
+    success_url = reverse_lazy('cross_referencer:list')
 
 
 class CrossReferenceDeleteView(DeleteView):
     model = CrossReference
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('cross_referencer:list')
