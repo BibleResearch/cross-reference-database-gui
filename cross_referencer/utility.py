@@ -7,6 +7,7 @@ from .models import BiblePassage
 
 def normalize_bible_passage(bible_passage):
     """Normalize the given bible passage."""
+    # TODO: implement normalization here...
     return bible_passage
 
 

@@ -3,6 +3,7 @@
 {% block content %}
     <form method="post">{% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
-        <input type="submit" value="Confirm">
+        <input class="button" type="submit" value="Confirm">
+        <a class="button" href="{% url 'cross_referencer:details' object.id %}">Don't delete</a>
     </form>
 {% endblock %}

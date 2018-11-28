@@ -17,7 +17,7 @@
     {% endif %}
 
     <p>
-        <a class="button secondary" href="{% url 'cross_referencer:edit' object.id %}">Edit</a>
+        <a class="button" href="{% url 'cross_referencer:edit' object.id %}">Edit</a>
         <a class="button secondary" href="{% url 'cross_referencer:delete' object.id %}">Delete</a>
     </p>
 {% endblock %}
